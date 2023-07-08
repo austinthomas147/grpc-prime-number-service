@@ -15,6 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimeNumberService.Tests", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C15FC5AE-C1B4-4588-B39F-BBAF8EEB3372}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{E981D96B-B510-4C4E-872A-D93B33DAB864}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNumberService.Common", "PrimeNumberService.Common\PrimeNumberService.Common.csproj", "{A61387F4-77E6-4212-9D18-48547F0AF965}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,10 @@ Global
 		{B9EA585E-15C9-4D28-ACE6-E365E8C321DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9EA585E-15C9-4D28-ACE6-E365E8C321DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9EA585E-15C9-4D28-ACE6-E365E8C321DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A61387F4-77E6-4212-9D18-48547F0AF965}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A61387F4-77E6-4212-9D18-48547F0AF965}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A61387F4-77E6-4212-9D18-48547F0AF965}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A61387F4-77E6-4212-9D18-48547F0AF965}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +49,7 @@ Global
 		{13DF95E9-FB41-4C1F-B10A-F3A72BF77D78} = {0034B1D6-642E-407C-824C-16C568942D3E}
 		{D3E87D1A-100F-457A-BC87-4645F35CB7EA} = {15FE6ADF-6AD0-493C-9F36-7E3B1AFABBA7}
 		{B9EA585E-15C9-4D28-ACE6-E365E8C321DF} = {C15FC5AE-C1B4-4588-B39F-BBAF8EEB3372}
+		{A61387F4-77E6-4212-9D18-48547F0AF965} = {E981D96B-B510-4C4E-872A-D93B33DAB864}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FBA638F6-393F-41C0-91FA-7A0AD81229B6}
