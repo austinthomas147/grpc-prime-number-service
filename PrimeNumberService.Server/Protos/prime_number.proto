@@ -6,6 +6,7 @@ package primenumber;
 
 service PrimeNumberValidator {
 	rpc CheckPrimeNumber (PrimeNumberRequest) returns (PrimeNumberResponse);
+	rpc CheckPrimeNumberStream (stream PrimeNumberRequest) returns (MultiPrimeNumberResponse);
 }
 
 message PrimeNumberRequest {
@@ -19,4 +20,8 @@ message PrimeNumberResponse {
 	int64 incomingTimestamp = 2;
 	int64 number = 4;
 	bool isPrimeNumber = 5;
+}
+
+message MultiPrimeNumberResponse {
+	repeated PrimeNumberResponse response = 1;
 }
