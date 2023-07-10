@@ -23,10 +23,7 @@ namespace PrimeNumberService.Server.Services
         public override async Task<PrimeNumberResponse> CheckPrimeNumber(PrimeNumberRequest request, 
                                                                    ServerCallContext context)
         {
-            var response = BuildPrimeNumberResponse(request);
-
-            if (response.IsPrimeNumber)
-                await _primeNumberRepository.AddPrimeNumberAsync(response.Number);
+            var response = await BuildPrimeNumberResponseAsync(request);
 
             await _messageCountRepository.AddMessage();
 
@@ -40,11 +37,8 @@ namespace PrimeNumberService.Server.Services
 
             await foreach(var request in requestStream.ReadAllAsync())
             {
-                var response = BuildPrimeNumberResponse(request);
+                var response = await BuildPrimeNumberResponseAsync(request);
                 responses.Response.Add(response);
-
-                if (response.IsPrimeNumber)
-                    await _primeNumberRepository.AddPrimeNumberAsync(response.Number);
 
                 await _messageCountRepository.AddMessage();
             }
@@ -52,7 +46,7 @@ namespace PrimeNumberService.Server.Services
             return responses;
         }
 
-        private PrimeNumberResponse BuildPrimeNumberResponse(PrimeNumberRequest request)
+        private async Task<PrimeNumberResponse> BuildPrimeNumberResponseAsync(PrimeNumberRequest request)
         {
             var response = new PrimeNumberResponse();
 
@@ -60,6 +54,9 @@ namespace PrimeNumberService.Server.Services
             response.IsPrimeNumber = PrimeNumberHelper.IsPrimeNumber(request.Number);
             response.Number = request.Number;
             response.IncomingTimestamp = request.Timestamp;
+
+            if (response.IsPrimeNumber)
+                await _primeNumberRepository.AddPrimeNumberAsync(response.Number);
 
             return response;
         }
