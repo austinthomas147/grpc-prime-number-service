@@ -2,19 +2,23 @@
 
 ## Description
 This project is a gRPC client and server implementation of a prime number service. The server accepts a message with the following format:
-`message PrimeNumberRequest {
+```
+message PrimeNumberRequest {
   int64 id = 1;
   int64 number = 2;
   int64 timestamp = 3;
-}`
+}
+```
 
 The server will determine if the number is a prime number, using the trial division method, and return the following response to the client:
-`message PrimeNumberResponse {
+```
+message PrimeNumberResponse {
   int64 requestId = 1;
   int64 number = 2;
   int64 incomingTimestamp = 3;
   bool isPrimeNumber = 4;
-}`
+}
+```
 
 The server will also keep track of basic statistics like:
 - How many total messages the server has received
