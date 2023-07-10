@@ -10,13 +10,16 @@ CLIENT_SOURCES := $(wildcard PrimeNumberService.Client/*)
 SERVER_TARGET := $(SERVER_OUTPUT_DIR/PrimeNumberService.Server.exe)
 CLIENT_TARGET := $(CLIENT_OUTPUT_DIR/PrimeNumberService.Client.exe)
 
-all: build publish clean
+all: build test publish
 
 build:
 	dotnet build "./PrimeNumberService.Server" -c Release
 	dotnet build "./PrimeNumberService.Client" -c Release
 
-client:
+test:
+	dotnet test "./PrimeNumberService.Tests"
+
+publish:
 	dotnet publish "./PrimeNumberService.Server" -c Release -o $(SERVER_OUTPUT_DIR)
 	dotnet publish "./PrimeNumberService.Client" -c Release -o $(CLIENT_OUTPUT_DIR)
 
