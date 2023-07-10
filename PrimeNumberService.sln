@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C15FC5AE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{E981D96B-B510-4C4E-872A-D93B33DAB864}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNumberService.Common", "PrimeNumberService.Common\PrimeNumberService.Common.csproj", "{A61387F4-77E6-4212-9D18-48547F0AF965}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimeNumberService.Common", "PrimeNumberService.Common\PrimeNumberService.Common.csproj", "{A61387F4-77E6-4212-9D18-48547F0AF965}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
